@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="box">
+        <header>
+            <h1>Daily Task</h1>
+            <h2>Today is a great day! What is your task today?</h2>
+        </header>
+
+        <form id="form-task" class ="form-task">
+            <input type="text" 
+            id="input-task"
+            placeholder="Enter your task"
+            autocomplete="off">
+
+            <input type="date"
+            id="input-date"
+            placeholder="Enter the due date"
+            autocomplete="off"
+            >
+
+            <p>How the Priority?</p>
+            <select id="input-priority" class="priority-select">
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+            </select>
+
+            <button type="submit" class="btn-add">Add Task</button>
+        </form>
+
+        <!-- Filter Section -->
+        <p>Filter by Status:</p>
+        <div class ="filter status">
+            <button type="button" class="btn-filter active">All</button>
+            <button type="button" class="btn-filter">Incomplete</button>
+            <button type="button" class="btn-filter">Complete</button>
+        </div>
+
+        <p>Filter by Priority:</p>
+        <div class="filter priority">
+            <button type="button" class="btn-filter active">All</button>
+            <button type="button" class="btn-filter">Low</button>
+            <button type="button" class="btn-filter">Medium</button>
+            <button type="button" class="btn-filter">High</button>
+        </div>
+
+        <!-- List Task-->
+        <ul id="task-list" class="task-list"></ul>
+        <p id="no-tasks-message">No tasks available. Take it easy</p>
+
+        <footer>
+            <span id="task-count">0 tasks available</span> 
+            <button type="button" id="clear-tasks" class="btn-clear">Clear All Tasks</button>
+        </footer>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>

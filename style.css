@@ -1,0 +1,43 @@
+:root {
+  /* Hijau */
+  --green-darkest: #0B3D2E;   /* background halaman */
+  --green-dark:    #145A41;   /* background box/card */
+  --green-main:    #1E7F5C;   /* tombol utama, border */
+  --green-light:   #34A878;   /* hover tombol hijau */
+  --green-pale:    #D8F3E6;   /* background item task / input */
+
+  /* Merah */
+  --red-dark:      #8B1E1E;   /* hover tombol hapus */
+  --red-main:      #C62828;   /* tombol Clear All, priority high */
+  --red-light:     #E85D5D;   /* hover merah */
+  --red-pale:      #FDE3E3;   /* background alert / task prioritas tinggi */
+
+  /* Emas */
+  --gold-dark:     #B8860B;   /* border, hover emas */
+  --gold-main:     #D4AF37;   /* judul, aksen, tombol aktif */
+  --gold-light:    #F2D675;   /* hover tombol emas */
+  --gold-pale:     #FFF4CC;   /* highlight lembut */
+
+  /* Netral untuk teks */
+  --text-light:    #FFFFFF;   /* teks di atas hijau gelap */
+  --text-cream:    #FFF8E1;   /* teks lembut di atas hijau */
+  --text-dark:     #1A1A1A;   /* teks di atas warna terang */
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(160deg, #0B3D2E, #145A41);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 32px 12px;
+}
+
+.box {
+background: #145A41;   /* atau rgba(255, 255, 255, 0.08) untuk efek transparan */
+border: 1px solid #D4AF37;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    width: 100%;
+    max-width: 440px;
+    border-radius: 16px;
+}
