@@ -1,47 +1,53 @@
 :root {
-  /* Hijau */
-  --green-darkest: #0B3D2E;   /* background halaman */
-  --green-dark:    #145A41;   /* background box/card */
-  --green-main:    #1E7F5C;   /* tombol utama, border */
-  --green-light:   #34A878;   /* hover tombol hijau */
-  --green-pale:    #D8F3E6;   /* background item task / input */
 
-  /* Merah */
-  --red-dark:      #8B1E1E;   /* hover tombol hapus */
-  --red-main:      #C62828;   /* tombol Clear All, priority high */
-  --red-light:     #E85D5D;   /* hover merah */
-  --red-pale:      #FDE3E3;   /* background alert / task prioritas tinggi */
+  --green-darkest: #0B3D2E;
+  --green-dark:    #145A41;
+  --green-main:    #1E7F5C;
+  --green-light:   #34A878;
+  --green-pale:    #D8F3E6;
 
-  /* Emas */
-  --gold-dark:     #B8860B;   /* border, hover emas */
-  --gold-main:     #D4AF37;   /* judul, aksen, tombol aktif */
-  --gold-light:    #F2D675;   /* hover tombol emas */
-  --gold-pale:     #FFF4CC;   /* highlight lembut */
+  --red-dark:      #8B1E1E;
+  --red-main:      #C62828;
+  --red-light:     #E85D5D;
+  --red-pale:      #FDE3E3;
 
-  /* Netral untuk teks */
-  --text-light:    #FFFFFF;   /* teks di atas hijau gelap */
-  --text-cream:    #FFF8E1;   /* teks lembut di atas hijau */
-  --text-dark:     #1A1A1A;   /* teks di atas warna terang */
+  --gold-dark:     #B8860B;
+  --gold-main:     #D4AF37;
+  --gold-light:    #F2D675;
+  --gold-pale:     #FFF4CC;
+
+  --text-light:    #FFFFFF;
+  --text-cream:    #FFF8E1;
+  --text-dark:     #1A1A1A;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
+    margin: 0;
     min-height: 100vh;
     background: linear-gradient(160deg, #0B3D2E, #145A41);
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding: 64px 24px; 
-    font-family: poppins, sans-serif;
+    padding: 64px 24px;
+    font-family: 'Poppins', sans-serif;
+}
+
+button, input, select {
+    font-family: inherit;
 }
 
 .box {
-background: var(--green-main);   /* atau rgba(255, 255, 255, 0.08) untuk efek transparan */
-border: 1px solid var(--green-dark);
-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-width: 100%;
-max-width: 440px;
-border-radius: 16px;
-padding: 24px;
+    background: var(--green-main);
+    border: 1px solid var(--green-dark);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    width: 100%;
+    max-width: 440px;
+    border-radius: 16px;
+    padding: 24px;
 }
 
 header h1 {
@@ -54,78 +60,76 @@ header h1 {
 header h2 {
     font-size: 15px;
     color: var(--gold-pale);
-    margin: 0 0 2px;
+    margin: 0 0 18px;
     font-weight: 400;
-    margin-bottom: 18px;
     text-align: center;
-
 }
 
 p {
     color: var(--gold-light);
     font-size: 13px;
     font-weight: 500;
+    margin: 8px 0 4px;
 }
 
 .form-task {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 16px;  
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
 }
 
-#input-task {
-  flex: 1;
-  min-width: 0;
-  padding: 10px 12px;
-  border: 2px solid var(--green-pale);
-  border-radius: 8px;
-  font-size: 13px;
-  outline: none;
-  transition: border-color 0.2s;
+.form-task p {
+    margin: 6px 0 0;
 }
 
-#input-task:focus {
-  border-color: var(--gold-main);
-}
-
+#input-task,
+.date-input,
 .priority-select {
-  padding: 10px;
-  border: 2px solid var(--green-pale);
-  border-radius: 8px;
-  font-size: 13px;
-  outline: none;
-  transition: border-color 0.2s;
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid var(--green-pale);
+    border-radius: 8px;
+    font-size: 13px;
+    outline: none;
+    background: var(--green-pale);
+    color: var(--text-dark);
+    transition: border-color 0.2s;
 }
 
+#input-task:focus,
+.date-input:focus,
 .priority-select:focus {
-  border-color: var(--gold-main);
+    border-color: var(--gold-main);
 }
 
 .btn-add {
+    margin-top: 8px;
     background: var(--gold-main);
-    color: var(--text-light);
+    color: var(--text-dark);
+    font-weight: 600;
     border: none;
     padding: 10px 16px;
     border-radius: 8px;
     font-size: 13px;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.15s, background 0.15s;
 }
 
-.btn-add:hover{
-    background: var(--gold-dark);
-    transform: scale(1.05);
+.btn-add:hover {
+    background: var(--gold-light);
+    transform: scale(1.03);
 }
-
 
 .filter {
     display: flex;
-    gap : 3px;
+    gap: 4px;
     margin-bottom: 8px;
 }
 
-.btn-filter-status, .btn-filter-priority {
+.btn-filter-status,
+.btn-filter-priority {
     flex: 1;
     border: none;
     border-radius: 8px;
@@ -135,28 +139,27 @@ p {
     background: var(--green-dark);
     color: var(--text-light);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.15s, background 0.15s;
 }
 
-.btn-filter-status.active, .btn-filter-priority.active {
+.btn-filter-status.active,
+.btn-filter-priority.active {
     background: var(--gold-main);
-    color: var(--text-light);
+    color: var(--text-dark);
     font-weight: 600;
 }
 
-.btn-filter-status:hover {
-    background: var(--gold-main);
-    transform: scale(1.05);
-}
-
+.btn-filter-status:hover,
 .btn-filter-priority:hover {
     background: var(--gold-main);
-    transform: scale(1.05);
+    color: var(--text-dark);
+    transform: scale(1.04);
 }
 
 .task-list {
     list-style: none;
     padding: 0;
-    margin: 10px 0;
+    margin: 14px 0 10px;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -166,11 +169,116 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
     padding: 10px 12px;
     border-radius: 8px;
+    border-left: 5px solid var(--gold-main);
     background: var(--green-dark);
     color: var(--text-light);
     font-size: 13px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.task-item.low    { border-left-color: var(--green-light); }
+.task-item.medium { border-left-color: var(--gold-main); }
+.task-item.high   { border-left-color: var(--red-main); }
+
+.task-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+}
+
+.task-name {
+    font-weight: 500;
+    word-break: break-word;
+}
+
+.task-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+}
+
+.priority-badge {
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.priority-badge.low {
+    background: var(--green-pale);
+    color: var(--green-dark);
+}
+
+.priority-badge.medium {
+    background: var(--gold-pale);
+    color: var(--gold-dark);
+}
+
+.priority-badge.high {
+    background: var(--red-pale);
+    color: var(--red-main);
+}
+
+.task-date {
+    color: var(--text-cream);
+    opacity: 0.85;
+}
+
+.task-date.overdue {
+    color: var(--red-light);
+    font-weight: 600;
+    opacity: 1;
+}
+
+.task-actions {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.btn-complete,
+.btn-delete {
+    border: none;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 11px;
+    cursor: pointer;
+    color: var(--text-light);
+    transition: transform 0.15s, background 0.15s;
+}
+
+.btn-complete {
+    background: var(--green-main);
+}
+
+.btn-complete:hover {
+    background: var(--green-light);
+    transform: scale(1.06);
+}
+
+.btn-delete {
+    background: var(--red-main);
+}
+
+.btn-delete:hover {
+    background: var(--red-dark);
+    transform: scale(1.06);
+}
+
+.task-item.completed {
+    opacity: 0.6;
+}
+
+.task-item.completed .task-name {
+    text-decoration: line-through;
 }
 
 #no-tasks-message {
@@ -184,9 +292,9 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 16px;
     border-top: 2px dashed var(--green-pale);
-    padding-top: 8px;
+    padding-top: 12px;
+    margin-top: 8px;
     font-size: 13px;
     color: var(--gold-light);
     font-weight: 500;
@@ -200,6 +308,7 @@ p {
     border-radius: 8px;
     font-size: 13px;
     cursor: pointer;
+    transition: transform 0.15s, background 0.15s;
 }
 
 .btn-clear:hover {

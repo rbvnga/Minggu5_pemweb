@@ -13,17 +13,16 @@
             <h2>Today is a great day! What is your task today?</h2>
         </header>
 
-        <form id="form-task" class ="form-task">
-            <input type="text" 
+        <form id="task-form" class="form-task">
+            <input type="text"
             id="input-task"
             placeholder="Enter your task"
             autocomplete="off">
 
+            <p>Due date:</p>
             <input type="date"
             id="input-date"
-            placeholder="Enter the due date"
-            autocomplete="off"
-            >
+            class="date-input">
 
             <p>How the Priority?</p>
             <select id="input-priority" class="priority-select">
@@ -35,29 +34,27 @@
             <button type="submit" class="btn-add">Add Task</button>
         </form>
 
-        <!-- Filter Section -->
         <p>Filter by Status:</p>
-        <div class ="filter status">
-            <button type="button" class="btn-filter-status active">All</button>
-            <button type="button" class="btn-filter-status">Incomplete</button>
-            <button type="button" class="btn-filter-status">Complete</button>
+        <div class="filter status">
+            <button type="button" class="btn-filter-status active" data-status="all">All</button>
+            <button type="button" class="btn-filter-status" data-status="incomplete">Incomplete</button>
+            <button type="button" class="btn-filter-status" data-status="complete">Complete</button>
         </div>
 
         <p>Filter by Priority:</p>
         <div class="filter priority">
-            <button type="button" class="btn-filter-priority active">All</button>
-            <button type="button" class="btn-filter-priority">Low</button>
-            <button type="button" class="btn-filter-priority">Medium</button>
-            <button type="button" class="btn-filter-priority">High</button>
+            <button type="button" class="btn-filter-priority active" data-priority="all">All</button>
+            <button type="button" class="btn-filter-priority" data-priority="low">Low</button>
+            <button type="button" class="btn-filter-priority" data-priority="medium">Medium</button>
+            <button type="button" class="btn-filter-priority" data-priority="high">High</button>
         </div>
 
-        <!-- List Task-->
         <ul id="task-list" class="task-list"></ul>
         <p id="no-tasks-message">No tasks available. Take it easy</p>
 
         <footer class="footer">
-            <span id="task-count">0 tasks available</span> 
-            <button type="button" id="clear-tasks" class="btn-clear">Clear All Tasks</button>
+            <span id="task-count">0 tasks available</span>
+            <button type="button" id="clear-tasks" class="btn-clear">Clear Completed</button>
         </footer>
     </div>
 <script src="script.js"></script>
